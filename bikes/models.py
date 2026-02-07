@@ -4,6 +4,9 @@ class Brand(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.name
+
 class Bike(models.Model):
     id = models.AutoField(primary_key=True)
     model = models.CharField(max_length=200)
@@ -11,3 +14,6 @@ class Bike(models.Model):
     factory_year = models.IntegerField(blank=True, null=True)
     model_year = models.IntegerField(blank=True, null=True)
     value = models.FloatField(blank=True, null=True)
+
+    def __str__(self):
+        return self.model
